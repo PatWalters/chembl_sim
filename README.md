@@ -7,7 +7,7 @@ pip install SQLAlchemy
 conda install -c conda-forge fpsim2
 ```
 
-1. Download chembl_27_sqlite.tar.gz from [ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/](ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/)
+1. Download chembl_27_sqlite.tar.gz from [ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/] (ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/)
 
 2. Untar the file and put chembl_27.db somewhere, and put the attached scripts in the same directory. 
 
