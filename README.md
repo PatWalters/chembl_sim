@@ -1,5 +1,6 @@
 # chembl_sim
 ### ChEMBL Similarity Search
+This code accompanies my blog post ["What Do Molecules That Look LIke This Tend To Do"](https://practicalcheminformatics.blogspot.com/2020/10/what-do-molecules-that-look-like-this.html)
 
 ### Installation
 
