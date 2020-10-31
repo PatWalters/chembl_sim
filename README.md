@@ -26,7 +26,7 @@ create_fpsim2_db.py chembl_27.db chembl_27.h5
 
 
 ### Usage
-Get the biological data for similar molecules 
+
 ```
 Usage: chembl_sim.py --query QUERY_SMI --out OUT_CSV [--sim SIM_CUTOFF]
 
