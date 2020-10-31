@@ -1,2 +1,2 @@
 # chembl_sim
-ChEBL Similarity Search
+ChEMBL Similarity Search
