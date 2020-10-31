@@ -1,7 +1,7 @@
 # chembl_sim
-###ChEMBL Similarity Search
+### ChEMBL Similarity Search
 
-###Installation
+### Installation
 
 This code requires the RDKit.  For more information on installation set [this link](https://www.rdkit.org/docs/Install.html). 
 
@@ -24,7 +24,7 @@ create_fpsim2_db.py chembl_27.db chembl_27.h5
 ```
 
 
-###Usage
+### Usage
 Get the biological data for similar molecules 
 ```
 Usage: chembl_sim.py --query QUERY_SMI --out OUT_CSV [--sim SIM_CUTOFF]
