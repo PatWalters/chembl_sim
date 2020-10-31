@@ -1,25 +1,31 @@
 # chembl_sim
-ChEMBL Similarity Search
+####ChEMBL Similarity Search
 
-0. Install necessary libraries
+####Installation
+
+This code requires the RDKit.  For more information on installation set [this link](https://www.rdkit.org/docs/Install.html). 
+
+Install the necessary python libraries
 ```
 pip install SQLAlchemy tqdm docopt
 conda install -c conda-forge fpsim2
 ```
 
-1. Download chembl_27_sqlite.tar.gz from [ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/](ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/)
+ Download chembl_27_sqlite.tar.gz from [ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/](ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/)
 ```
 wget ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_27_sqlite.tar.gz
 ```
 
-2. Untar the file and put chembl_27.db somewhere, and put the attached scripts in the same directory. 
+Untar the file and put chembl_27.db somewhere, and put the attached scripts in the same directory. 
 
-3. Create the fingerprint database, note that this takes a while
+Create the fingerprint database, note that this takes a while
 ```
 create_fpsim2_db.py chembl_27.db chembl_27.h5
 ```
 
-4. Get the biological data for similar molecules 
+
+####Usage
+Get the biological data for similar molecules 
 ```
 Usage: chembl_sim.py --query QUERY_SMI --out OUT_CSV [--sim SIM_CUTOFF]
 
