@@ -17,7 +17,7 @@ conda install -c conda-forge fpsim2
 wget ftp://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/latest/chembl_27_sqlite.tar.gz
 ```
 
-Untar the file and put chembl_27.db somewhere, and put the attached scripts in the same directory. 
+Untar the file and put chembl_27.db somewhere and put the attached scripts in the same directory. 
 
 Create the fingerprint database, note that this takes a while
 ```
