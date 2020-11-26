@@ -33,6 +33,7 @@ do_input = docopt(__doc__)
 query_filename = do_input.get("--query")
 output_filename = do_input.get("--out")
 sim_cutoff = do_input.get("--sim") or 0.7
+sim_cutoff = float(sim_cutoff)
 
 # Open the SQLite database file
 db_filename = "chembl_27.db"
@@ -62,7 +63,7 @@ except FileNotFoundError:
 
 # Process the input
 for query_smi, query_name in tqdm(query_df.values):
-    results = fpe.similarity(query_smi, 0.7, n_workers=1)
+    results = fpe.similarity(query_smi, sim_cutoff, n_workers=1)
     for molregno, sim in results:
         res = get_assay_data(con, molregno)
         res['query_smiles'] = query_smi
