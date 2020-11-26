@@ -38,8 +38,8 @@ if not os.path.exists(db_filename):
 con = sqlite3.connect(db_filename)
 
 # Open the fingerprint file
+fp_filename = db_basename + ".h5"
 try:
-    fp_filename = db_basename + ".h5"
     fpe = FPSim2Engine(fp_filename)
 except IOError:
     print(f"Could not open fingerprint file {fp_filename}", file=sys.stderr)
