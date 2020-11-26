@@ -44,4 +44,15 @@ To set the similarity cutoff:
 chembl_sim_search.py --query query.smi --out out.csv --sim 0.6
 ```
 
+### A More General Solution for Searching Databases Other Than ChEMBL
+
+I also created a couple of scripts that will enable you to create and search FpSim2
+databases from SMILES files.  As a quick example 
+
+```
+smi2fpsim2.py test.smi
+search_fpsim2.py --query query.smi --db test --out test.csv --sim 0.3
+```
+
+Please see the help for these scripts for more information
 
