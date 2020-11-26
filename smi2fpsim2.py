@@ -52,4 +52,4 @@ create_db_file(res_prox, fpdb2_h5_filename, 'Morgan', {'radius': 2, 'nBits': 204
 
 print(f"Created FPSim2 database {fpdb2_h5_filename}")
 
-# create_db_file(smiles_file_name, fpdb2_h5_filename, 'Morgan', {'radius': 2, 'nBits': 2048},gen_ids=True)
+
