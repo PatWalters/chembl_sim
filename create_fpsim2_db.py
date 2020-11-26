@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 
 if len(sys.argv) != 3:
     print(f"usage: {sys.argv[0]} chembl_database_file fingerprint_file")
+    sys.exit(0)
 
 chembl_database_file = sys.argv[1]
 fpdb2_h5_file = sys.argv[2]
