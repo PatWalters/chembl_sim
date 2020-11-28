@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 
-"""Usage: search_fpsim2.py --query QUERY_SMI --db DATABASE_BASE_FILENAME --out OUT_CSV [--sim SIM_CUTOFF]
+"""Usage: search_fpsim2.py --query QUERY_SMI --db DATABASE_BASE_FILENAME --out OUT_CSV [--sim SIM_CUTOFF] [--workers NUM_WORKERS]
 
 --help print this help message
 --query QUERY_SMI query SMILES file (takes the form SMILES name)
 --db DATABASE_BASE_FILENAME based name for .h5 and .db file without extension
 --out OUT_CSV output csv file
---sim SIM_CUTOFF similarity cutoff, default=0.7
+--sim SIM_CUTOFF similarity cutoff, default=0.35
+--workers NUM_WORKERS number of processors to use for search, default = 1
 """
 
 import sys
@@ -27,8 +28,10 @@ do_input = docopt(__doc__)
 query_filename = do_input.get("--query")
 db_basename = do_input.get("--db")
 output_filename = do_input.get("--out")
-sim_cutoff = do_input.get("--sim") or 0.7
+sim_cutoff = do_input.get("--sim") or 0.35
 sim_cutoff = float(sim_cutoff)
+num_workers = do_input.get("--workers") or 1
+num_workers = int(num_workers)
 
 db_filename = db_basename + ".db"
 # Open the SQLite database file
@@ -58,7 +61,7 @@ except FileNotFoundError:
 
 # Process the input
 for query_smi, query_name in tqdm(query_df.values):
-    results = fpe.similarity(query_smi, sim_cutoff, n_workers=1)
+    results = fpe.similarity(query_smi, sim_cutoff, n_workers=num_workers)
     for molregno, sim in results:
         res = get_assay_data(con, molregno)
         res['query_smiles'] = query_smi

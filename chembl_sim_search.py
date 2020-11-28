@@ -5,7 +5,7 @@
 --help print this help message
 --query QUERY_SMI query SMILES file (takes the form SMILES name)
 --out OUT_CSV output csv file
---sim SIM_CUTOFF similarity cutoff, default=0.7
+--sim SIM_CUTOFF similarity cutoff, default=0.35
 """
 
 import sys
@@ -32,7 +32,7 @@ and act.standard_type in ('IC50', 'Ki', 'EC50')"""
 do_input = docopt(__doc__)
 query_filename = do_input.get("--query")
 output_filename = do_input.get("--out")
-sim_cutoff = do_input.get("--sim") or 0.7
+sim_cutoff = do_input.get("--sim") or 0.35
 sim_cutoff = float(sim_cutoff)
 
 # Open the SQLite database file
